@@ -1,0 +1,49 @@
+﻿@*<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Vidly", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Customers", "Index", "Customers")</li>
+                <li>@Html.ActionLink("Movies", "Index", "Movies")</li>
+                <li>@Html.ActionLink("Genre","Genre","Movies")</li>
+            </ul>
+            @Html.Partial("_LoginPartial")
+        </div>
+    </div>
+</div>*@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+ 
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+                <a class="nav-link" href="@Url.Action("Index", "Customers")">Customer</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index", "Movies")">Movies</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Genre", "Movies")">Genre</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("New", "Rentals")">Rental</a>
+            </li>
+
+         
+        @Html.Partial("_LoginPartial")
+        @*<form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>*@
+    </div>
+</nav>
+

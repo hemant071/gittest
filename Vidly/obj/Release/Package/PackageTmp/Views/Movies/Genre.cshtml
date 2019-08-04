@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Vidly.Models.Genre>
+
+@{
+    ViewBag.Title = "Genre";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Genre</h2>
+<form method="get" action=GenreForm>
+    <button type="submit" class="btn btn-primary">Add New Genre</button>
+
+</form>
+
+<table class="table table-bordered table-hover">
+
+    <thead>
+        <tr>
+            <th>SN</th>
+            <th>Genre</th>
+            <th>Date Added</th>
+            <th>Date Updated</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int i = 1;
+        }
+        @foreach (var genre in Model)
+        {
+
+            <tr>
+
+                <td>@i@{i += 1;}</td>
+                <td>@Html.ActionLink(genre.Name, "GenEdit", "Movies", new { genre.Id }, null)</td>
+                <td>@genre.DateAdded</td>
+                <td>@genre.DateUpdated</td>
+                <td>
+                   
+                    @Html.ActionLink("Delete", "Delete", "Movies", new { id = genre.Id }, new { @class = "btn btn-danger" })
+                </td>
+
+              
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+
+
+
+

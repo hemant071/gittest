@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Vidly.Models.Genre>
+
+@{
+    ViewBag.Title = "Genre";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Genre</h2>
+
+
+<table class="table table-bordered table-hover">
+
+    <thead>
+        <tr>
+            <th>SN</th>
+            <th>Genre</th>
+            <th>Date Added</th>
+            <th>Date Updated</th>
+         
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int i = 1;
+        }
+
+
+        @foreach (var genre in Model)
+        {
+
+        <tr>
+
+            <td>@i@{i += 1;}</td>
+            <td>@genre.Name</td>
+            <td>@genre.DateAdded</td>
+            <td>@genre.DateUpdated</td>
+
+
+        </tr>
+        }
+
+    </tbody>
+</table>
+
+
+
+
+

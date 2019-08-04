@@ -1,0 +1,32 @@
+﻿@model Vidly.Models.Genre
+@{
+    ViewBag.Title = "GenreForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add New Genre </h2>
+@using (Html.BeginForm("Saves", "Movies"))
+{
+
+
+<div class="form-group">
+    @Html.LabelFor(g => g.Name)
+    @Html.TextBoxFor(g => g.Name, new { @class = "form-control" })
+
+    @Html.LabelFor(g => g.DateAdded)
+    @Html.TextBoxFor(g => g.DateAdded, new { @class = "form-control" })
+
+    @Html.LabelFor(g =>g.DateUpdated)
+    @Html.TextBoxFor(g=>g.DateUpdated,new {@class = "form-control",@readonly="readonly" })
+
+
+
+    @Html.HiddenFor(g => g.Id)
+
+
+
+
+    <button type="submit" class="btn btn-primary">Save</button>
+
+</div>
+}
